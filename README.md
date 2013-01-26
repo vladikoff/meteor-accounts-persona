@@ -37,3 +37,7 @@ Template.header.events({
 You can download the official Persona Buttons from [Persona Branding Resources](https://developer.mozilla.org/en-US/docs/persona/branding)
 
 ```Meteor.loginWithPersona();``` supports [Meteor.loginWithExternalService([options], [callback])](http://docs.meteor.com/#meteor_loginwithexternalservice)
+
+FAQ
+----------------------
+See the [Github Wiki](https://github.com/vladikoff/meteor-accounts-persona/wiki) for FAQ
