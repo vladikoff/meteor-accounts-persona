@@ -22,12 +22,26 @@
         },
         result = Meteor.http.call("POST", url, request);
 
-    if (result.data.status === 'okay') {
-      result.data.id = result.data.email;
-      var userLoginData = Accounts.updateOrCreateUserFromExternalService('persona', result.data);
-      return userLoginData;
+    // check response
+    if (result.data) {
+
+      // check that the issuer is login.persona.org
+      if (result.data.issuer !== 'login.persona.org') {
+        throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Invalid Persona issuer");
+      }
+
+      // check response status
+      if (result.data.status === 'okay') {
+        result.data.id = result.data.email;
+        var userLoginData = Accounts.updateOrCreateUserFromExternalService('persona', result.data);
+        return userLoginData;
+      } else {
+        throw new Meteor.Error(Accounts.LoginCancelledError.numericError, 'Persona Login Failed');
+      }
+
     } else {
-      throw new Meteor.Error(Accounts.LoginCancelledError.numericError, 'Persona Login Failed');
+      throw new Meteor.Error(Accounts.LoginCancelledError.numericError, 'No Data Received');
     }
+
   });
 })();
