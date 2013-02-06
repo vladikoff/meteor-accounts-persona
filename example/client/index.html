@@ -1,0 +1,75 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <meta name="format-detection" content="email=no">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300' rel='stylesheet' type='text/css'>
+	<title>Meteor Persona: A Better Way to Sign In</title>
+</head>
+
+<body>
+	<div id="errorBackground"></div>
+	<div id="wrapper">
+		{{>header}}
+		{{>browserId}}	
+	</div>
+	{{>footer}}
+    {{>logs_bootstrap}}
+</body>
+
+<template name="browserId">
+    <div id="error">
+        <div class="contents"></div>
+    </div>
+
+    <div id="hAlign" class="display_nonauth" style="display: block;">
+        <div id="vAlign" style="height: 124px;">
+            <div id="signUp">
+                <div id="card" class=""><img src="img/slit.png"></div>
+                <h1 class="white headline-main">Sign in with your email to access <b>Meteor-Persona</b></h1>
+                <p class="tour white">
+                    <a href="#" class="button create">Sign In →</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="header">
+    <header id="header" class="cf">
+        <a class="home" href="index.html">Persona Home</a>
+        <ul class="nav cf">
+            <li>
+                <a href="https://login.persona.org/about">How it works</a>
+            </li>
+            <li class="signIn">     
+				{{>personaButton}}          
+            </li>
+        </ul>
+    </header>
+</template>
+
+<template name="footer">
+	<footer>
+	    <ul class="cf">
+	        <li>Meteor-Persona @ <a
+	                href="https://github.com/vladikoff/meteor-accounts-persona" target="_blank">Github</a></li>
+	        <li><a href="https://github.com/vladikoff/meteor-accounts-persona" target="_blank">Project on Github →</a></li>
+	        <li class="help"><a href="https://support.mozilla.com/kb/what-is-persona-and-how-does-it-work" target="_blank">Need Help? →</a></li>
+	    </ul>
+	</footer>
+</template>
+
+<template name="personaButton">
+    {{#if currentUser}}
+        {{#if loggingIn}}
+            <a href="#" id="loginPersona" class="persona-button dark"><span>Sign in with your Email</span></a>
+        {{else}}
+            <a href="#" id="logoutPersona" class="persona-button dark"><span> {{currentUser.username}}, Sign out</span></a>
+        {{/if}}
+    {{else}}
+        <a href="#" id="loginPersona" class="persona-button dark"><span>Sign in with your Email</span></a>
+    {{/if}}
+</template>
+
