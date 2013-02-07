@@ -12,29 +12,34 @@
       return undefined; // don't handle
 
     var url = "https://verifier.login.persona.org/verify",
-        request = {
-          data:{
-            "assertion":options.assertion,
-            "audience":Meteor.absoluteUrl('')
-          },
-          headers:{
-            "content-type":"application/json"}
+      request = {
+        data:{
+          "assertion":options.assertion,
+          "audience":Meteor.absoluteUrl('')
         },
-        result = Meteor.http.call("POST", url, request);
+        headers:{
+          "content-type":"application/json"}
+      },
+      result = Meteor.http.call("POST", url, request);
 
     // check response
-    if (result.data) {
-
-      // check that the issuer is login.persona.org
-      if (result.data.issuer !== 'login.persona.org') {
-        throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Invalid Persona issuer");
-      }
+    var p = result.data;
+    if (p) {
 
       // check response status
-      if (result.data.status === 'okay') {
-        result.data.id = result.data.email;
-        var userLoginData = Accounts.updateOrCreateUserFromExternalService('persona', result.data);
-        return userLoginData;
+      if (p.status === 'okay') {
+
+        // check that the issuer is login.persona.org
+        if (p.issuer !== 'login.persona.org') {
+          throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Invalid Persona issuer");
+        }
+
+        // check token expiration
+        if (new Date() <= new Date(p.expires))
+          throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Persona Token Expired");
+
+        p.id = p.email;
+        return Accounts.updateOrCreateUserFromExternalService('persona', p);
       } else {
         throw new Meteor.Error(Accounts.LoginCancelledError.numericError, 'Persona Login Failed');
       }
