@@ -3,6 +3,6 @@
   "description":  "Login service for Persona accounts.",
   "homepage": "https://github.com/vladikoff/meteor-accounts-persona",
   "author": "vladikoff",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "git": "https://github.com/vladikoff/meteor-accounts-persona.git"
 }

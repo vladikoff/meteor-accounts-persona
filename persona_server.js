@@ -35,7 +35,7 @@
         }
 
         // check token expiration
-        if (new Date() <= new Date(p.expires))
+        if (new Date() >= new Date(p.expires))
           throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Persona Token Expired");
 
         p.id = p.email;
