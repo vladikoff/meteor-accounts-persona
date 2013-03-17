@@ -18,11 +18,19 @@ mrt install accounts-persona
 
 ```mrt``` is a Meteorite command line tool. Visit [Meteorite's home page](http://oortcloud.github.com/meteorite/) to learn more.
 
+
+Update
+-------------------
+
+Since version `0.1.3` this package requires you to include the Persona library yourself, please read below.
+
+
 Include Persona Library
 --------------------
 
-Mozilla strongly recomends directly downloading the persona library from their servers due to possible changes, and Meteor does not allow
-dynamically loading remote javascript files. To meet both requirements you MUST include the Persona library in your head section. To do this,
+Mozilla strongly [recommends](https://developer.mozilla.org/en-US/docs/Persona/Quick_Setup#Step_1.3A_Include_the_Persona_library)
+directly downloading the persona library from their servers due to possible changes, and Meteor does not allow
+dynamically loading remote JavaScript files. To meet both requirements you MUST include the Persona library in your head section. To do this,
 in one template file, add the following code:
 
 ```html
