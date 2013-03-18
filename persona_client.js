@@ -10,21 +10,25 @@
      * callLoginMethod user callback
      * @param error
      */
-    var loginCallback = function(error) {
-      if (! error) { callback(); }
+    var loginCallback = function (error) {
+      if (!error) {
+        callback();
+      }
     };
 
     navigator.id.request();
 
     navigator.id.watch({
-      onlogin: function(assertion) {
+      onlogin: function (assertion) {
         Accounts.callLoginMethod({
-            methodName:'login',
-            methodArguments: [{persona: true, assertion: assertion }],
-            userCallback: loginCallback
+          methodName: 'login',
+          methodArguments: [
+            { persona: true, assertion: assertion }
+          ],
+          userCallback: loginCallback
         });
       },
-      onlogout: function() {
+      onlogout: function () {
         navigator.id.logout();
         Accounts._makeClientLoggedOut();
       }

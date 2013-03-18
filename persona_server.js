@@ -1,24 +1,24 @@
 (function () {
 
   Meteor.startup(function () {
-    var config = Accounts.loginServiceConfiguration.findOne({service:'persona'});
+    var config = Accounts.loginServiceConfiguration.findOne({service: 'persona'});
     if (!config) {
-      Accounts.loginServiceConfiguration.insert({ service:'persona' });
+      Accounts.loginServiceConfiguration.insert({ service: 'persona' });
     }
   });
 
-  Accounts.registerLoginHandler(function(options) {
+  Accounts.registerLoginHandler(function (options) {
     if (!options.persona && !options.assertion)
       return undefined; // don't handle
 
     var url = "https://verifier.login.persona.org/verify",
       request = {
-        data:{
-          "assertion":options.assertion,
-          "audience":Meteor.absoluteUrl('')
+        data: {
+          "assertion": options.assertion,
+          "audience": Meteor.absoluteUrl('')
         },
-        headers:{
-          "content-type":"application/json"}
+        headers: {
+          "content-type": "application/json"}
       },
       result = Meteor.http.call("POST", url, request);
 
