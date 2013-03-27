@@ -16,8 +16,6 @@
       }
     };
 
-    navigator.id.request();
-
     navigator.id.watch({
       onlogin: function (assertion) {
         Accounts.callLoginMethod({
@@ -33,5 +31,7 @@
         Accounts._makeClientLoggedOut();
       }
     });
+
+    navigator.id.request();
   };
 })();
