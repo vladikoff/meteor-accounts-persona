@@ -29,11 +29,6 @@
       // check response status
       if (p.status === 'okay') {
 
-        // check that the issuer is login.persona.org
-        if (p.issuer !== 'login.persona.org') {
-          throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Invalid Persona issuer");
-        }
-
         // check token expiration
         if (new Date() >= new Date(p.expires))
           throw new Meteor.Error(Accounts.LoginCancelledError.numericError, "Persona Token Expired");
