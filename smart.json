@@ -1,8 +1,8 @@
 {
   "name": "accounts-persona",
-  "description":  "Login service for Persona accounts.",
+  "description": "Login service for Mozilla Persona accounts.",
   "homepage": "https://github.com/vladikoff/meteor-accounts-persona",
   "author": "vladikoff",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "git": "https://github.com/vladikoff/meteor-accounts-persona.git"
 }

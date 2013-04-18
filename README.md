@@ -73,4 +73,5 @@ You can download the official Persona Buttons from [Persona Branding Resources](
 
 FAQ
 ----------------------
+
 See the [Github Wiki](https://github.com/vladikoff/meteor-accounts-persona/wiki) for FAQ
