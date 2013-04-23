@@ -55,7 +55,7 @@ Usage
 --------------------
 
 If you use {{loginButtons}} from [accounts-ui](http://docs.meteor.com/#accountsui), then "Sign in with Persona"
-will show up right after you install this package.
+will show up right after you install this package. (NOTE: to use `{{loginButtons}}` make sure you have `accounts-ui` added)
 
 To create a custom login button, hook up an event handler
 
