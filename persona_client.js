@@ -11,7 +11,7 @@
      * @param error
      */
     var loginCallback = function (error) {
-      if (!error) {
+      if (!error && callback) {
         callback();
       }
     };

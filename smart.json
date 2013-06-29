@@ -3,6 +3,6 @@
   "description": "Login service for Mozilla Persona accounts.",
   "homepage": "https://github.com/vladikoff/meteor-accounts-persona",
   "author": "vladikoff",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "git": "https://github.com/vladikoff/meteor-accounts-persona.git"
 }
