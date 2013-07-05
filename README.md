@@ -1,7 +1,7 @@
 meteor-accounts-persona
 =========================
 
-A meteor package for Mozilla Persona service.
+A meteor package for [Mozilla Persona](http://www.mozilla.org/en-US/persona/), the decentralized authentication system.
 
 Package Dependencies
 --------------------
