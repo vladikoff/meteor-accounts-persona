@@ -4,6 +4,7 @@ Package.describe({
 
 Package.on_use(function(api, where) {
   api.use('accounts-base', ['client', 'server']);
+  api.use('accounts-oauth', ['client', 'server']);
   api.use('http', ['server']);
 
   api.add_files('persona_common.js', ['client', 'server']);

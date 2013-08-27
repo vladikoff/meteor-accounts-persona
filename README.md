@@ -7,13 +7,14 @@ Package Dependencies
 --------------------
 
 * accounts-base
+* accounts-oauth
 
 
 Install
 --------------------
 
 ```
-mrt install accounts-persona
+mrt add accounts-persona
 ```
 
 ```mrt``` is a Meteorite command line tool. Visit [Meteorite's page](http://oortcloud.github.com/meteorite/) to learn more.
