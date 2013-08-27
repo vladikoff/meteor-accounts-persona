@@ -2,6 +2,7 @@ meteor-accounts-persona
 =========================
 
 A meteor package for [Mozilla Persona](http://www.mozilla.org/en-US/persona/), the decentralized authentication system.
+See [Demo App](http://meteor-persona.meteor.com/) ([View Source](https://github.com/vladikoff/meteor-test-persona))
 
 Package Dependencies
 --------------------
