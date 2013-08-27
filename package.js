@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Login service for Persona accounts."
+  summary: "Login service for Mozilla Persona accounts."
 });
 
 Package.on_use(function(api, where) {
