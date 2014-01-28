@@ -5,6 +5,8 @@ A meteor package for [Mozilla Persona](http://www.mozilla.org/en-US/persona/), t
 
 See [Demo App](http://meteor-persona.meteor.com/) ([View Source](https://github.com/vladikoff/meteor-test-persona))
 
+[Watch Quick Setup Tutorial](https://www.youtube.com/watch?v=agWYKzZUilI) 
+
 View package in the [Atmosphere package repository](https://atmosphere.meteor.com/package/accounts-persona)
 
 Package Dependencies
