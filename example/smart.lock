@@ -1,0 +1,25 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master",
+    "commit": "4d98d8cb4e5a95e9e98953f44c872c9332a042a3"
+  },
+  "dependencies": {
+    "basePackages": {
+      "accounts-persona": {},
+      "observatory": {}
+    },
+    "packages": {
+      "accounts-persona": {
+        "git": "https://github.com/vladikoff/meteor-accounts-persona.git",
+        "tag": "v0.1.1",
+        "commit": "20bd91bd0d4343cca73e29ae1c66c85fc532c0b6"
+      },
+      "observatory": {
+        "git": "https://github.com/jhoxray/observatory.git",
+        "tag": "v0.1.8",
+        "commit": "08188f96361dbdbec1855ee616bbb4c03543b1ea"
+      }
+    }
+  }
+}

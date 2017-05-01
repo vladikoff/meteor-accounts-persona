@@ -1,0 +1,503 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font: 14px/21px 'Open Sans', "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+    overflow-y: auto;
+}
+
+/* for floats */
+.cf:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+* html .cf {
+    height: 1%;
+}
+
+header {
+}
+
+header, section, footer {
+    display: block;
+    width: 100%;
+}
+
+footer {
+    color: #484848;
+    font-weight: 300;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.hidden {
+    /* This funkiness is so that labels still appear for screen readers */
+    visibility: hidden;
+    display: block;
+    height: 0;
+}
+
+a {
+    color: #348fd0;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+a:hover {
+    color: #000;
+}
+
+label {
+    display: block;
+}
+
+button,
+.button {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 6px 10px 7px;
+    float: right;
+    border: 0;
+    color: #fff;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    white-space: nowrap;
+
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.2);
+
+    background-color: #4eb5e5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4eb5e5), to(#3196cf));
+    background-image: -webkit-linear-gradient(top, #4eb5e5, #3196cf);
+    background-image: -moz-linear-gradient(top, #4eb5e5, #3196cf);
+    background-image: -ms-linear-gradient(top, #4eb5e5, #3196cf);
+    background-image: -o-linear-gradient(top, #4eb5e5, #3196cf);
+    background-image: linear-gradient(top, #4eb5e5, #3196cf);
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.1);
+
+    background-color: #4aafe5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4aafe5), to(#2c89c8));
+    background-image: -webkit-linear-gradient(top, #4aafe5, #2c89c8);
+    background-image: -moz-linear-gradient(top, #4aafe5, #2c89c8);
+    background-image: -ms-linear-gradient(top, #4aafe5, #2c89c8);
+    background-image: -o-linear-gradient(top, #4aafe5, #2c89c8);
+    background-image: linear-gradient(top, #4aafe5, #2c89c8);
+}
+
+button:focus,
+.button:focus {
+    box-shadow: 0 0 1px #fff, 0 0 1px 3px #49ADE3;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px 3px rgba(73, 173, 227, 0.6);
+}
+
+button:active,
+.button:active {
+    background-color: #184a73;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#184a73), to(#276084));
+    background-image: -webkit-linear-gradient(top, #184a73, #276084);
+    background-image: -moz-linear-gradient(top, #184a73, #276084);
+    background-image: -ms-linear-gradient(top, #184a73, #276084);
+    background-image: -o-linear-gradient(top, #184a73, #276084);
+    background-image: linear-gradient(top, #184a73, #276084);
+    color: #97b6ca;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+button::-moz-focus-inner, .button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+.headline-main, h1, h2, h3, h4 {
+    font-weight: normal;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
+}
+
+.headline-main {
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: 100%;
+}
+
+h1 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+    line-height: 100%;
+}
+
+.white {
+    color: #fff;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 100%;
+}
+
+h3 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    line-height: 100%;
+}
+
+h4 {
+    font-size: 24px;
+    letter-spacing: -0.25px;
+    line-height: 100%;
+}
+
+small {
+    font-size: 12px;
+    line-height: 100%;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+footer .help {
+    float: right;
+    cursor: help;
+}
+
+#error {
+    background-color: #dadee1;
+    background-image: url("/img/grain.png"), -webkit-gradient(linear, left top, left bottom, from(#dadee1), to(#c7ccd0));
+    background-image: url("/img/grain.png"), -webkit-linear-gradient(top, #dadee1, #c7ccd0);
+    background-image: url("/img/grain.png"), -moz-linear-gradient(top, #dadee1, #c7ccd0);
+    background-image: url("/img/grain.png"), -ms-linear-gradient(top, #dadee1, #c7ccd0);
+    background-image: url("/img/grain.png"), -o-linear-gradient(top, #dadee1, #c7ccd0);
+    background-image: url("/img/grain.png"), linear-gradient(top, #dadee1, #c7ccd0);
+}
+
+#error .contents {
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+#error h2 {
+    font-size: 22px;
+}
+
+#error p {
+    margin-top: 20px;
+}
+
+#error .emphasis {
+    margin-top: 15px;
+    color: #aa1401;
+}
+
+#error .contents {
+    max-width: 430px;
+    margin: 0 auto;
+}
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#noscript-warning {
+    position: absolute;
+    position: fixed;
+    display: block;
+    background-color: #ef1010;
+    top: 0;
+    left: 0;
+    padding: 1px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+body {
+    background-color: #6a7b86;
+    background-image: url("/img/marketplace-header.png"), url("/img/grain.png");
+    background-position: center top, center top;
+    background-repeat: repeat-x, repeat;
+    color: #fff;
+}
+
+#errorBackground {
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: alpha(opacity = 0); /* Needed for IE6 and IE7 on the main site */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    z-index: -2;
+    background: #000;
+    zoom: 1;
+    -webkit-transition: opacity 750ms;
+    -moz-transition: opacity 750ms;
+    -ms-transition: opacity 750ms;
+    -o-transition: opacity 750ms;
+    transition: opacity 750ms;
+}
+
+.error #errorBackground {
+    z-index: 1001;
+    display: block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    opacity: .6;
+}
+
+#error {
+    z-index: -2;
+    filter: alpha(opacity = 0); /* Needed for IE6 and IE7 on the main site */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    -webkit-transition: opacity 750ms;
+    -moz-transition: opacity 750ms;
+    -ms-transition: opacity 750ms;
+    -o-transition: opacity 750ms;
+    transition: opacity 750ms;
+    position: absolute; /* For a couple of browsers without position: fixed support */
+    position: fixed;
+    top: 35%;
+    left: 20%;
+    right: 20%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    color: #333;
+}
+
+.error #error {
+    z-index: 1004;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    opacity: 1;
+}
+
+#error > div {
+    padding: 10px;
+    z-index: 1001;
+}
+
+#wrapper {
+    width: 896px;
+    margin: 0 auto;
+}
+
+/*#content {
+  padding: 50px 0;
+}*/
+
+h1 {
+    margin-bottom: 35px;
+}
+
+.headline-main, h1 {
+    font-weight: 300;
+}
+
+#hAlign {
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#vAlign {
+    height: 1000px;
+    width: 700px; /* the width here is to keep the cell from collapsing */
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#signUp {
+    padding: 0 0 0 250px;
+}
+
+#signUp h1 {
+    max-width: 390px;
+}
+
+.tour {
+    font-size: 18px;
+    line-height: 39px;
+}
+
+.tour a {
+    margin: 0 7px;
+    text-shadow: 0 1px 0 #555;
+}
+
+.tour .button {
+    font-size: 19px;
+    border: 1px solid;
+    border-radius: 7px;
+    border-color: #68b8e8 #5da8dc #2f597b #5aa4d9;
+    display: inline-block;
+    padding: 11px 25px;
+    background-image: -webkit-linear-gradient(top, #42a5e1, #2970aa);
+    background-image: -moz-linear-gradient(top, #42a5e1, #2970aa);
+    background-image: -ms-linear-gradient(top, #42a5e1, #2970aa);
+    background-image: -o-linear-gradient(top, #42a5e1, #2970aa);
+    background-image: linear-gradient(top, #42a5e1, #2970aa);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+}
+
+.tour .button:hover {
+	text-decoration: none;
+    color: #fff;
+    border-color: #338fd1 #277ec4 #0e6bb6 #277ec4;
+    background-image: -webkit-linear-gradient(top, #338fd1, #0e6bb6);
+    background-image: -moz-linear-gradient(top, #338fd1, #0e6bb6);
+    background-image: -ms-linear-gradient(top, #338fd1, #0e6bb6);
+    background-image: -o-linear-gradient(top, #338fd1, #0e6bb6);
+    background-image: linear-gradient(top, #338fd1, #0e6bb6);
+}
+
+.create {
+    float: none;
+    vertical-align: middle;
+}
+
+#card {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    background-image: url("/img/badge.png");
+    background-position: 0px center;
+    background-repeat: no-repeat;
+
+    -webkit-transition: background-position 0.4s ease;
+    -moz-transition: background-position 0.4s ease;
+    -o-transition: background-position 0.4s ease;
+    transition: background-position 0.4s ease;
+}
+
+#card.insert {
+    background-position: 170px center;
+}
+
+#card img {
+    float: right;
+}
+
+#wrapper > header {
+    font-weight: bold;
+    z-index: 1;
+}
+
+header .nav a {
+    font-size: 16px;
+    padding: 4px 8px;
+    color: #fff;
+    text-shadow: 0 1px 0 #999;
+}
+
+header .nav a:hover {
+    color: #383838;
+    background-color: #f4f3f0;
+    border-radius: 7px;
+}
+
+header ul {
+    float: right;
+    line-height: 37px;
+}
+
+header li {
+    margin: 0 0 0 10px;
+}
+
+.home {
+    width: 205px;
+    height: 50px;
+    background: url("/img/logo.png") 0 0 no-repeat;
+    text-indent: -9999px;
+    display: inline-block;
+}
+
+*
+
+header, footer {
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #eff1f3;
+    margin-top: 10px;
+
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+}
+
+footer .cf {
+    width: 896px;
+    margin: 0 auto;
+}
+
+footer ul li:first-child {
+    margin-right: 35px;
+}
+
+footer ul li:first-child a {
+    color: #484848;
+}
+
+footer ul li:first-child a:hover {
+    border-bottom: 1px dotted #000;
+}
+
+/*h2.title {
+  font-size: 48px;
+  font-weight: normal;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  letter-spacing: -2px;
+  padding-bottom: 30px;
+  margin: 0;
+}
+*/
